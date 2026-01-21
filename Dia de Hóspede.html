@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição - Dia de Hóspede</title>
+    <link rel="stylesheet" href="CSS_Dia de hóspede.css"> 
+</head>
+<body>
+
+<div class="container">
+    
+    <section id="page-regras" class="form-page active">
+        <header>
+            <img src="logo_santissimo.png" id="logo_resort" alt="Logo Santíssimo Resort"> 
+            <h2>Bem-Vindo ao Programa Dia de Hóspede</h2>
+        </header>
+        
+        <div class="rules-box">
+            <h3>O que é o Dia de Hóspede?</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            
+            <h3>Regras para Participação</h3>
+            <ol>
+                <li>**Tempo de Admissão:** Lorem ipsum dolor sit amet (Mínimo de 01 ano de casa).</li>
+                <li>**Limite Diário:** Lorem ipsum dolor sit amet (Máximo de 3 funcionários por dia).</li>
+                <li>**Acompanhantes:** Lorem ipsum dolor sit amet (Permitido até 5 acompanhantes).</li>
+                <li>**Uso do Benefício:** Lorem ipsum dolor sit amet (Detalhe sobre o que inclui/exclui).</li>
+            </ol>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+        <div class="acceptance-box">
+            <input type="checkbox" id="aceite-regras">
+            <label for="aceite-regras">Eu li e **aceito integralmente** os Termos e Regras do Programa Dia de Hóspede.</label>
+        </div>
+        
+        <button type="button" class="btn btn-primary" id="btn-avancar-cadastro" disabled>Avançar para o Cadastro</button>
+    </section>
+
+    <section id="page-cadastro" class="form-page hidden-default">
+        <header>
+            <img src="logo_santissimo.png" id="logo_resort_small" alt="Logo Santíssimo Resort" class="hidden-default"> 
+            <h2>Preenchimento dos Dados</h2>
+        </header>
+        
+        <form id="hospedeForm">
+            <section class="form-section">
+                </section>
+            
+            <button type="submit" class="btn btn-primary" id="btn-enviar">Enviar Inscrição</button>
+        </form>
+    </section>
+
+</div>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição - Dia de Hóspede</title>
+    <link rel="stylesheet" href="CSS_Dia de hóspede.css"> 
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <img src="logo_santissimo.png" id="logo_resort" alt="Logo Santíssimo Resort">
+        <h2>Dia de Hóspede | Grupo RB</h2>
+        <p>Agora que você leu e concordou com as regras, vamos prosseguir para a sua inscrição. Preencha os dados abaixo:</p>
+    </header>
+    
+    <form id="hospedeForm">
+        
+        <section class="form-section">
+            <h3>Seus Dados</h3>
+
+            <label for="empresa">Empresa:</label>
+            <select id="empresa" required>
+                <option value="">Selecione...</option>
+                <option value="Santíssimo Resort">Santíssimo Resort</option>
+                <option value="Pousada Mãe D'Água">Pousada Mãe D'Água</option>
+                <option value="Escritório">Escritório</option>
+                <option value="Serraria">Serraria</option>
+                <option value="Beta de Prata">Beta de Prata</option>
+            </select>
+
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" required placeholder="Seu nome">
+
+            <div class="input-group">
+                <div>
+                    <label for="nascimento">Data de Aniversário:</label>
+                    <input type="date" id="nascimento" required>
+                </div>
+                <div>
+                    <label for="admissao">Data de Admissão:</label>
+                    <input type="date" id="admissao" required>
+                </div>
+            </div>
+
+            <div id="div-setor" class="field-container hidden-default">
+                <label for="setor">Setor:</label>
+                <select id="setor"></select>
+            </div>
+
+        </section>
+
+        <section class="form-section">
+            <div id="erro-admissao" class="alert error hidden-default">
+                🛑 **É necessário ter no mínimo 01 ano de admissão para uso do benefício.**
+            </div>
+
+            <div id="div-beneficio" class="hidden-default">
+                <h3>Agendamento</h3>
+                <label for="data-beneficio">Data pretendida para o Dia de Hóspede:</label>
+                <input type="date" id="data-beneficio">
+            </div>
+        </section>
+
+
+        <section class="form-section" id="acompanhantes-section">
+            <h3>Acompanhantes (Máx: 3)</h3>
+            <div id="lista-acompanhantes">
+                </div>
+            <button type="button" class="btn btn-secondary" id="btn-add-guest">+ Adicionar Acompanhante</button>
+        </section>
+
+        <button type="submit" class="btn btn-primary" id="btn-enviar">Enviar Inscrição</button>
+    </form>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
+

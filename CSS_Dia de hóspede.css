@@ -1,0 +1,242 @@
+/* Configuração Global */
+body {
+    font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5; /* Fundo cinza claro */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 650px;
+    width: 100%;
+}
+
+/* Tipografia e Títulos */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#logo_resort {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+h2 {
+    color: #734226; /* Verde escuro institucional */
+    margin-bottom: 5px;
+    font-size: 1.8em;
+}
+
+p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+h3 {
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    color: #F26A4B;
+    font-size: 1.3em;
+}
+
+/* Estilo dos Campos */
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+input[type="text"], 
+input[type="date"], 
+select {
+    font-family: Poppins;
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: ##F26A4B; /* laranja vibrante no foco */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 150, 136, 0.2);
+}
+
+/* Agrupamento de Inputs */
+.input-group {
+    display: flex;
+    gap: 20px;
+}
+
+.input-group > div {
+    flex: 1;
+}
+
+/* Botões */
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s, opacity 0.3s;
+    font-size: 1em;
+}
+
+.btn-primary {
+    background-color: #7ED0D9; /* Botão principal (ENVIAR) */
+    color: white;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.btn-primary:hover {
+    background-color: #9EBF56;
+}
+
+.btn-secondary {
+    background-color: #F2A74B; /* Botão Adicionar */
+    color: #fff;
+    width: 100%;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+}
+
+.btn-secondary:hover {
+    background-color: #F26A4B;
+}
+
+/* Seções e Acompanhantes */
+.form-section {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px dashed #ddd;
+    border-radius: 8px;
+}
+
+.guest-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.guest-item input {
+    margin-top: 0;
+}
+
+/* Alertas e Condicionais */
+.hidden-default {
+    display: none;
+}
+
+.alert {
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.alert.error {
+    background-color: #ffe0e0; /* Fundo vermelho claro */
+    color: #cc0000;
+    border: 1px solid #cc0000;
+}
+
+/* Responsividade Básica */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    .input-group {
+        flex-direction: column;
+    }
+    .guest-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .form-section {
+        padding: 10px;
+    }
+}
+
+/* ... (Seções anteriores do CSS) ... */
+
+/* --- NOVOS ESTILOS PARA PAGINAÇÃO E REGRAS --- */
+
+/* Classes para controle de visibilidade das páginas */
+.form-page {
+    transition: opacity 0.4s ease-in-out;
+}
+
+.form-page.active {
+    display: block;
+}
+
+.form-page.hidden-default {
+    display: none;
+}
+
+/* Estilo para a caixa de regras */
+.rules-box {
+    background-color: #f7f7f7;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    max-height: 400px; /* Limita a altura para simular scroll */
+    overflow-y: auto;
+}
+
+.rules-box h3 {
+    color: #00796b;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px;
+    margin-top: 15px;
+}
+
+.rules-box ol, .rules-box p {
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+/* Estilo para a caixa de aceite */
+.acceptance-box {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+.acceptance-box input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+    transform: scale(1.3);
+}
+
+.acceptance-box label {
+    font-weight: 700;
+    color: #004d40;
+    cursor: pointer;
+}
+
+/* Redimensiona o logo na página de cadastro (opcional, se quiser um logo menor lá) */
+#logo_resort_small {
+    max-width: 100px;
+    margin-bottom: 15px;
+}
