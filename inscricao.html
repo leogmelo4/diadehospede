@@ -3,55 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dia de Hóspede | Regras</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Dia de Hóspede | Inscrição</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
 <div class="container">
   <header>
-    <img src="logo_santissimo.png" id="logo_resort" alt="Santíssimo Resort">
-    <h2>Bem-vindo ao Programa Dia de Hóspede</h2>
+    <img src="logo_santissimo.png" id="logo_resort_small" alt="Santíssimo Resort">
+    <h2>Inscrição – Dia de Hóspede</h2>
   </header>
 
-  <div class="rules-box">
-    <h3>O que é o Dia de Hóspede?</h3>
-    <p>Texto institucional explicando o benefício.</p>
+  <form id="hospedeForm">
 
-    <h3>Regras para Participação</h3>
-    <ol>
-      <li>Mínimo de 1 ano de admissão.</li>
-      <li>Limite diário de colaboradores.</li>
-      <li>Até 3 acompanhantes.</li>
-      <li>Benefício mediante disponibilidade.</li>
-    </ol>
-  </div>
+    <section class="form-section">
+      <h3>Seus Dados</h3>
 
-  <div class="acceptance-box">
-    <input type="checkbox" id="aceite">
-    <label for="aceite">Li e aceito os termos do programa.</label>
-  </div>
+      <label>Empresa</label>
+      <select id="empresa" required>
+        <option value="">Selecione…</option>
+        <option>Santíssimo Resort</option>
+        <option>Pousada Mãe D'Água</option>
+        <option>Escritório</option>
+        <option>Serraria</option>
+        <option>Beta de Prata</option>
+      </select>
 
-  <button class="btn btn-primary" id="btn-avancar" disabled>
-    Aceite as regras para continuar
-  </button>
+      <label>Nome Completo</label>
+      <input type="text" id="nome" required>
+
+      <div class="input-group">
+        <div>
+          <label>Data de Nascimento</label>
+          <input type="date" id="nascimento" required>
+        </div>
+        <div>
+          <label>Data de Admissão</label>
+          <input type="date" id="admissao" required>
+        </div>
+      </div>
+
+      <div id="erro-admissao" class="alert error hidden-default">
+        É necessário ter no mínimo 1 ano de admissão.
+      </div>
+    </section>
+
+    <section class="form-section">
+      <h3>Agendamento</h3>
+      <label>Data pretendida</label>
+      <input type="date" id="data-beneficio">
+    </section>
+
+    <section class="form-section">
+      <h3>Acompanhantes</h3>
+      <div id="lista-acompanhantes"></div>
+      <button type="button" class="btn btn-secondary" id="btn-add-guest">
+        + Adicionar acompanhante
+      </button>
+    </section>
+
+    <button type="submit" class="btn btn-primary">Enviar inscrição</button>
+  </form>
 </div>
 
-<script>
-  const aceite = document.getElementById("aceite");
-  const btn = document.getElementById("btn-avancar");
-
-  aceite.addEventListener("change", () => {
-    btn.disabled = !aceite.checked;
-    btn.textContent = aceite.checked
-      ? "Avançar para inscrição"
-      : "Aceite as regras para continuar";
-  });
-
-  btn.addEventListener("click", () => {
-    window.location.href = "inscricao.html";
-  });
-</script>
-
+<script src="js/script.js"></script>
 </body>
 </html>
